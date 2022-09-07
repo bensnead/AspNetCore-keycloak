@@ -124,13 +124,13 @@ namespace KeycloakAuth
                 options.AddPolicy("users", policy =>
                 policy.RequireAssertion(context =>
                 context.User.HasClaim(c =>
-                        (c.Value == "user") || (c.Value == "admin"))));
+                        (c.Value == "ncs_User") || (c.Value == "ncs_Admin"))));
                 //Create policy with only one claim
                 options.AddPolicy("admins", policy =>
-                    policy.RequireClaim(ClaimTypes.Role, "admin"));
+                    policy.RequireClaim(ClaimTypes.Role, "ncs_Admin"));
                 //Create a policy with a claim that doesn't exist or you are unauthorized to
                 options.AddPolicy("noaccess", policy =>
-                    policy.RequireClaim(ClaimTypes.Role, "noaccess"));
+                    policy.RequireClaim(ClaimTypes.Role, "ncs_noaccess"));
             });
 
 

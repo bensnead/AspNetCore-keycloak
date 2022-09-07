@@ -20,7 +20,7 @@ namespace KeycloakAuth
             Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
-                config.AddJsonFile("appsettings.json").AddEnvironmentVariables();
+                config.AddJsonFile("appsettings.json").AddEnvironmentVariables().AddUserSecrets("afab524d-850e-499a-bc13-98f61ca0eb3b") ;
             })
             .ConfigureWebHostDefaults(webBuilder =>
             {

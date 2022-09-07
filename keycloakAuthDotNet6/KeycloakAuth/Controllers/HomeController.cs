@@ -46,8 +46,8 @@ namespace KeycloakAuth.Controllers
          * If nothing works, try to test just with [Authorize] to see that you can get a token from your keycloak
          */
 
-        // [Authorize(Policy = "admins")]
-        [Authorize]
+         [Authorize(Policy = "admins")]
+        //[Authorize]
         public IActionResult AuthenticationAdmin()
         {
             return View();
@@ -62,8 +62,8 @@ namespace KeycloakAuth.Controllers
         }
 
         //A policy was defined, so authorize must use a policy instead of a role.
-        //[Authorize(Policy = "users")]
-        [Authorize]
+        [Authorize(Policy = "users")]
+        //[Authorize]
         public async Task<IActionResult> AuthenticationAsync()
         {
 
